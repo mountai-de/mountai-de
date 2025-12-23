@@ -141,3 +141,4 @@ vite.config.ts.timestamp-*
 # Else
 .DS_Store
 file.typ
+ignore_me
