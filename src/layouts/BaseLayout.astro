@@ -1,0 +1,56 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { 
+  title, 
+  description = "Prozessautomatisierung mit lokalen KI-Modellen. DSGVO-konform, auf Ihrer Infrastruktur." 
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description}>
+
+  <title>{title}</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/styles/global.css">
+
+  <!-- Preconnect für Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo">Mount AI</a>
+      <a href="mailto:kontakt@mount-ai.de" class="nav-link">Kontakt</a>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="/impressum">Impressum</a>
+        <a href="/datenschutz">Datenschutz</a>
+      </div>
+      <p class="footer-text">
+        Kein Tracking. Keine Cookies. So arbeiten wir auch mit Ihren Daten.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
