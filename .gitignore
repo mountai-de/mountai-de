@@ -140,3 +140,4 @@ vite.config.ts.timestamp-*
 
 # Else
 .DS_Store
+file.typ
