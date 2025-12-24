@@ -149,3 +149,5 @@ ignore_me
 # Test files
 screenshots/
 test_*.png
+.astro/types.d.ts
+.astro/data-store.json
