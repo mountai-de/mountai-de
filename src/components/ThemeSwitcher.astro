@@ -1,0 +1,68 @@
+---
+// ThemeSwitcher.astro
+---
+
+<div class="theme-switcher">
+  <!-- <button data-theme="light" class="theme-btn" aria-label="Light Theme">Hell</button> -->
+  <button data-theme="neutral" class="theme-btn active" aria-label="Neutral Theme">Hell</button>
+  <button data-theme="dark" class="theme-btn" aria-label="Dark Theme">Dunkel</button>
+</div>
+
+<style>
+  .theme-switcher {
+    display: flex;
+    gap: var(--space-sm);
+    position: fixed;
+    top: var(--space-md);
+    right: var(--space-md);
+    z-index: 1000;
+  }
+
+  .theme-btn {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+
+  .theme-btn:hover {
+    background: var(--color-bg-alt);
+  }
+
+  .theme-btn.active {
+    background: var(--color-accent);
+    color: var(--color-bg);
+    border-color: var(--color-accent);
+  }
+</style>
+
+<script>
+  const themeButtons = document.querySelectorAll<HTMLButtonElement>('.theme-btn');
+  const body = document.body;
+
+  // Funktion zum Setzen des Themes
+  function setTheme(theme: string) {
+    body.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    // Aktive Klasse aktualisieren
+    themeButtons.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.theme === theme);
+    });
+  }
+
+  // Theme beim Laden setzen
+  const savedTheme = localStorage.getItem('theme') || 'neutral';
+  setTheme(savedTheme);
+
+  // Event Listener für Buttons
+  themeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const theme = btn.dataset.theme!;
+      setTheme(theme);
+    });
+  });
+</script>

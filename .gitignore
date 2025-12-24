@@ -142,3 +142,10 @@ vite.config.ts.timestamp-*
 .DS_Store
 file.typ
 ignore_me
+
+# Astro cache
+.astro/
+
+# Test files
+screenshots/
+test_*.png

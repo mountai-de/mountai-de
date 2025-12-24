@@ -1,12 +1,14 @@
 ---
+import ThemeSwitcher from '../components/ThemeSwitcher.astro';
+
 interface Props {
   title: string;
   description?: string;
 }
 
-const { 
-  title, 
-  description = "Prozessautomatisierung mit lokalen KI-Modellen. DSGVO-konform, auf Ihrer Infrastruktur." 
+const {
+  title,
+  description = "Prozessautomatisierung mit lokalen KI-Modellen. DSGVO-konform, auf Ihrer Infrastruktur."
 } = Astro.props;
 ---
 
@@ -26,16 +28,19 @@ const {
   <link rel="stylesheet" href="/src/styles/global.css">
 
   <!-- Preconnect für Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <!-- NEIN! Sollte LOKAL sein -->
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
 </head>
 <body>
   <header class="header">
     <div class="container header-inner">
       <a href="/" class="logo">Mount AI</a>
-      <a href="mailto:kontakt@mount-ai.de" class="nav-link">Kontakt</a>
+      <a href="mailto:kontakt@mountai.de" class="nav-link">Kontakt</a>
     </div>
   </header>
+
+  <ThemeSwitcher />
 
   <main>
     <slot />
