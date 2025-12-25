@@ -1,0 +1,44 @@
+{
+  "mcpServers": {
+    "brave-search": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-brave-search"
+      ],
+      "env": {
+        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+      },
+      "disabledTools": [
+        "brave_local_search"
+      ],
+      "alwaysAllow": [
+        "brave_web_search"
+      ]
+    },
+    "coolify": {
+      "command": "npx",
+      "args": [
+        "/Users/yazan/AI-Stuff/mcp/mount-mcp-coolify/build/index.js"
+      ],
+      "env": {
+        "COOLIFY_ACCESS_TOKEN": "${COOLIFY_ACCESS_TOKEN}",
+        "COOLIFY_BASE_URL": "https://devops.mountai.de"
+      },
+      "alwaysAllow": [
+        "list-resources",
+        "list-applications",
+        "get-application",
+        "start-application",
+        "restart-application",
+        "list-services",
+        "list-databases",
+        "list-deployments",
+        "deploy",
+        "update-application",
+        "stop-application"
+      ],
+      "disabled": true
+    }
+  }
+}

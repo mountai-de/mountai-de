@@ -31,8 +31,12 @@ Dieses Dokument enthält alle Informationen für das Deployment der MountAI Webs
 
 ### Environment Variables
 
+**WICHTIG:** Diese Environment Variables müssen in Coolify gesetzt werden, damit die Astro-Konfiguration korrekt funktioniert:
+
 | Variable | Wert | Beschreibung |
 |----------|------|--------------|
+| `SITE_URL` | `https://gh-pages.mountai.de` | **ERFORDERLICH**: Die URL der Coolify-Deployment |
+| `BASE_PATH` | `/` | **ERFORDERLICH**: Root-Pfad für Coolify (im Gegensatz zu `/mountai-de` für GitHub Pages) |
 | `NODE_ENV` | `production` | Production Mode |
 
 ### Deployment-Typ
@@ -82,9 +86,36 @@ Für separate Production/Staging/Development Environments kannst du verschiedene
    - Build Command: `bun install && bun run build`
    - Output Directory: `dist/`
 
-3. **Deployen:**
+3. **Environment Variables setzen (WICHTIG!):**
+   - Gehe zu deiner App → "Environment" Tab
+   - Füge folgende Variables hinzu:
+     ```
+     SITE_URL=https://gh-pages.mountai.de
+     BASE_PATH=/
+     NODE_ENV=production
+     ```
+   - Klicke auf "Save"
+
+4. **Deployen:**
    - Klicke auf "Deploy"
    - Coolify wird den Build ausführen und die Website bereitstellen
+   - Nach erfolgreichem Deployment sollte die Seite mit vollständigem CSS-Styling verfügbar sein
+
+## Lokales Testen
+
+Um beide Deployment-Varianten lokal zu testen:
+
+### GitHub Pages Version (mit Base-Pfad):
+```bash
+SITE_URL=https://mountai-de.github.io BASE_PATH=/mountai-de bun run build
+bun run preview
+```
+
+### Coolify Version (ohne Base-Pfad):
+```bash
+SITE_URL=https://gh-pages.mountai.de BASE_PATH=/ bun run build
+bun run preview
+```
 
 ## Troubleshooting
 
@@ -93,10 +124,30 @@ Für separate Production/Staging/Development Environments kannst du verschiedene
 - Prüfe, ob `bun` installiert ist (wenn Nixpacks verwendet wird, sollte es automatisch funktionieren)
 - Prüfe, ob alle Dependencies in `package.json` korrekt sind
 
-### 404 Fehler nach Deployment
+### 404 Fehler / Fehlende CSS-Styles nach Deployment
+
+**Problem**: Die Seite lädt, aber hat kein CSS-Styling (weißer Hintergrund, nur Plain Text).
+
+**Ursache**: Der `BASE_PATH` ist nicht korrekt konfiguriert. Astro generiert Asset-Pfade basierend auf diesem Wert.
+
+**Lösung**:
+1. Gehe in Coolify zur Anwendung → Environment
+2. Setze folgende Environment Variables:
+   - `SITE_URL=https://gh-pages.mountai.de`
+   - `BASE_PATH=/`
+3. Speichere die Änderungen
+4. Führe einen Re-Deploy aus
+
+**Prüfung nach Fix**:
+- Öffne die Browser DevTools (F12) → Network Tab
+- Suche nach CSS-Dateien - sie sollten jetzt mit Status 200 (nicht 404) geladen werden
+- Die Seite sollte identisch zur GitHub Pages Version aussehen
+
+### Build fehlgeschlagen
 
 - Prüfe, ob die `Output Directory` auf `dist/` gesetzt ist
 - Prüfe, ob der Build erfolgreich war
+- Stelle sicher, dass die ENV-Variablen `SITE_URL` und `BASE_PATH` gesetzt sind
 
 ### Fonts werden nicht geladen
 

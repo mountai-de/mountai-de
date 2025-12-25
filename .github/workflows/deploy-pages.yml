@@ -27,6 +27,9 @@ jobs:
 
       - name: Build Astro
         run: bun run build
+        env:
+          SITE_URL: https://mountai-de.github.io
+          BASE_PATH: /mountai-de
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
