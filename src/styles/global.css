@@ -29,8 +29,8 @@
   --color-footer-muted: #b1aea5;
 
   /* Typografie */
-  --font-body: 'Atkinson', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display: 'Garamond', Georgia, serif;
+  --font-body: 'Anthro-Sans-Roman', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Anthro-Serif-Roman', Georgia, serif;
 
   /* Spacing */
   --space-xs: 0.5rem;
