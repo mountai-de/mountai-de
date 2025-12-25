@@ -35,7 +35,7 @@ Dieses Dokument enthält alle Informationen für das Deployment der MountAI Webs
 
 | Variable | Wert | Beschreibung |
 |----------|------|--------------|
-| `SITE_URL` | `https://gh-pages.mountai.de` | **ERFORDERLICH**: Die URL der Coolify-Deployment |
+| `SITE_URL` | `https://mountai.de` | **ERFORDERLICH**: Die URL der Coolify-Deployment |
 | `BASE_PATH` | `/` | **ERFORDERLICH**: Root-Pfad für Coolify (im Gegensatz zu `/mountai-de` für GitHub Pages) |
 | `NODE_ENV` | `production` | Production Mode |
 
@@ -90,7 +90,7 @@ Für separate Production/Staging/Development Environments kannst du verschiedene
    - Gehe zu deiner App → "Environment" Tab
    - Füge folgende Variables hinzu:
      ```
-     SITE_URL=https://gh-pages.mountai.de
+     SITE_URL=https://mountai.de
      BASE_PATH=/
      NODE_ENV=production
      ```
@@ -113,7 +113,7 @@ bun run preview
 
 ### Coolify Version (ohne Base-Pfad):
 ```bash
-SITE_URL=https://gh-pages.mountai.de BASE_PATH=/ bun run build
+SITE_URL=https://mountai.de BASE_PATH=/ bun run build
 bun run preview
 ```
 
@@ -133,7 +133,7 @@ bun run preview
 **Lösung**:
 1. Gehe in Coolify zur Anwendung → Environment
 2. Setze folgende Environment Variables:
-   - `SITE_URL=https://gh-pages.mountai.de`
+   - `SITE_URL=https://mountai.de`
    - `BASE_PATH=/`
 3. Speichere die Änderungen
 4. Führe einen Re-Deploy aus

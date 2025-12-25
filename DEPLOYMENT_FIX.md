@@ -13,7 +13,7 @@ Der `base`-Pfad in [`astro.config.mjs`](astro.config.mjs) war hardcodiert auf `/
 | Deployment | URL | Base-Pfad |
 |------------|-----|-----------|
 | GitHub Pages | `https://mountai-de.github.io/mountai-de` | `/mountai-de` |
-| Coolify | `https://gh-pages.mountai.de` | `/` |
+| Coolify | `https://mountai.de` | `/` |
 
 ## Lösung
 
@@ -45,7 +45,7 @@ export default defineConfig({
 In Coolify müssen folgende ENV-Variablen gesetzt werden:
 
 ```
-SITE_URL=https://gh-pages.mountai.de
+SITE_URL=https://mountai.de
 BASE_PATH=/
 NODE_ENV=production
 ```
@@ -64,7 +64,7 @@ Um das Problem zu beheben, führe folgende Schritte in Coolify aus:
 2. **In Coolify Environment Variables setzen:**
    - Gehe zu deiner App → "Environment" Tab
    - Füge hinzu:
-     - `SITE_URL` = `https://gh-pages.mountai.de`
+     - `SITE_URL` = `https://mountai.de`
      - `BASE_PATH` = `/`
    - Speichere die Änderungen
 
@@ -73,7 +73,7 @@ Um das Problem zu beheben, führe folgende Schritte in Coolify aus:
    - Warte bis der Build abgeschlossen ist
 
 4. **Verifizierung:**
-   - Öffne `https://gh-pages.mountai.de` im Browser
+   - Öffne `https://mountai.de` im Browser
    - Die Seite sollte jetzt identisch zur GitHub Pages Version aussehen
    - In den DevTools (F12) → Network sollten alle CSS-Dateien mit Status 200 geladen werden
 
