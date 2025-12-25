@@ -51,11 +51,12 @@ const baseUrl = import.meta.env.BASE_URL;
     <header class="header">
       <div class="container header-inner">
         <a href={baseUrl} class="logo">Mount AI</a>
-        <a href="mailto:kontakt@mountai.de" class="nav-link">Kontakt</a>
+        <div class="header-right">
+          <a href="mailto:kontakt@mountai.de" class="nav-link">Kontakt</a>
+          <ThemeSwitcher />
+        </div>
       </div>
     </header>
-
-    <ThemeSwitcher />
 
     <main>
       <slot />

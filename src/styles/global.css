@@ -179,6 +179,9 @@ p {
 }
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   padding: var(--space-md) 0;
   border-bottom: 1px solid var(--color-border);
   background-color: var(--color-bg-header);
@@ -188,6 +191,12 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
 }
 
 .nav-link {
@@ -339,5 +348,11 @@ p {
     flex-direction: column;
     gap: var(--space-sm);
     text-align: center;
+  }
+
+  .header-right {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--space-sm);
   }
 }
