@@ -25,21 +25,21 @@ const baseUrl = import.meta.env.BASE_URL;
     <title>{title}</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href={`${baseUrl}/favicon.svg`} />
+    <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
 
     <!-- Font Face Declarations mit korrektem BASE_URL public/fonts/Anthro-Serif-Roman.woff2 -->
     <style
       set:html={`
     @font-face {
       font-family: 'Anthro-Serif-Roman';
-      src: url('${baseUrl}/fonts/Anthro-Serif-Roman.woff2') format('truetype');
+      src: url('${baseUrl}fonts/Anthro-Serif-Roman.woff2') format('truetype');
       font-weight: 400 600;
       font-display: swap;
     }
 
     @font-face {
       font-family: 'Anthro-Sans-Roman';
-      src: url('${baseUrl}/fonts/Anthro-Sans-Roman.woff2') format('truetype');
+      src: url('${baseUrl}fonts/Anthro-Sans-Roman.woff2') format('truetype');
       font-weight: 400 500 600;
       font-display: swap;
     }
@@ -68,8 +68,8 @@ const baseUrl = import.meta.env.BASE_URL;
     <footer class="footer">
       <div class="container">
         <div class="footer-links">
-          <a href={`${baseUrl}/impressum`}>Impressum</a>
-          <a href={`${baseUrl}/datenschutz`}>Datenschutz</a>
+          <a href={`${baseUrl}impressum`}>Impressum</a>
+          <a href={`${baseUrl}datenschutz`}>Datenschutz</a>
         </div>
         <p class="footer-text">
           Kein Tracking. Keine Cookies. So arbeiten wir auch mit Ihren Daten.

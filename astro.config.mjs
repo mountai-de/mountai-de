@@ -9,4 +9,5 @@ export default defineConfig({
   site: process.env.SITE_URL || 'https://mountai-de.github.io',
   base: process.env.BASE_PATH || '/mountai-de',
   output: 'static',
+  trailingSlash: 'always', // Garantiert trailing slash in BASE_URL
 });
