@@ -1,5 +1,6 @@
 ---
 import ThemeSwitcher from '../components/ThemeSwitcher.astro';
+import '../styles/global.css';
 
 interface Props {
   title: string;
@@ -10,6 +11,8 @@ const {
   title,
   description = "Prozessautomatisierung mit lokalen KI-Modellen. DSGVO-konform, auf Ihrer Infrastruktur."
 } = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <!DOCTYPE html>
@@ -22,10 +25,24 @@ const {
   <title>{title}</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href={`${baseUrl}/favicon.svg`}>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/src/styles/global.css">
+  <!-- Font Face Declarations mit korrektem BASE_URL -->
+  <style set:html={`
+    @font-face {
+      font-family: 'Garamond';
+      src: url('${baseUrl}/fonts/Garamond.ttf') format('truetype');
+      font-weight: 400 600;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Atkinson';
+      src: url('${baseUrl}/fonts/Atkinson.ttf') format('truetype');
+      font-weight: 400 500 600;
+      font-display: swap;
+    }
+  `}></style>
 
   <!-- Preconnect für Fonts -->
    <!-- NEIN! Sollte LOKAL sein -->
@@ -35,7 +52,7 @@ const {
 <body>
   <header class="header">
     <div class="container header-inner">
-      <a href="/" class="logo">Mount AI</a>
+      <a href={baseUrl} class="logo">Mount AI</a>
       <a href="mailto:kontakt@mountai.de" class="nav-link">Kontakt</a>
     </div>
   </header>
@@ -49,8 +66,8 @@ const {
   <footer class="footer">
     <div class="container">
       <div class="footer-links">
-        <a href="/impressum">Impressum</a>
-        <a href="/datenschutz">Datenschutz</a>
+        <a href={`${baseUrl}/impressum`}>Impressum</a>
+        <a href={`${baseUrl}/datenschutz`}>Datenschutz</a>
       </div>
       <p class="footer-text">
         Kein Tracking. Keine Cookies. So arbeiten wir auch mit Ihren Daten.

@@ -3,21 +3,7 @@
    "Kanzlei trifft Tech"
    ======================================== */
 
-/* Fonts - Lokale Schriftarten */
-
-@font-face {
-  font-family: 'Garamond';
-  src: url('/fonts/Garamond.ttf') format('truetype');
-  font-weight: 400 600;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Atkinson';
-  src: url('/fonts/Atkinson.ttf') format('truetype');
-  font-weight: 400 500 600;
-  font-display: swap;
-}
+/* Fonts - Lokale Schriftarten werden in BaseLayout.astro mit korrektem BASE_URL geladen */
 
 /* Reset & Base */
 *, *::before, *::after {
