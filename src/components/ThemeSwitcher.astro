@@ -2,11 +2,12 @@
 // ThemeSwitcher.astro
 ---
 
-<div class="theme-switcher">
-  <!-- <button data-theme="light" class="theme-btn" aria-label="Light Theme">Hell</button> -->
+<!-- Theme-Switcher deaktiviert - Theme folgt jetzt automatisch der Systemeinstellung -->
+<!-- Zum Reaktivieren: Diese Komponente in BaseLayout.astro wieder einbinden und Script unten aktivieren -->
+<!-- <div class="theme-switcher">
   <button data-theme="neutral" class="theme-btn active" aria-label="Neutral Theme">Hell</button>
   <button data-theme="dark" class="theme-btn" aria-label="Dark Theme">Dunkel</button>
-</div>
+</div> -->
 
 <style>
   .theme-switcher {
@@ -36,7 +37,9 @@
   }
 </style>
 
-<script>
+<!-- Script deaktiviert - Theme folgt jetzt automatisch prefers-color-scheme -->
+<!-- Zum Reaktivieren: Kommentare entfernen und Buttons oben wieder aktivieren -->
+<!-- <script>
   const themeButtons = document.querySelectorAll<HTMLButtonElement>('.theme-btn');
   const body = document.body;
 
@@ -61,4 +64,4 @@
       setTheme(theme);
     });
   });
-</script>
+</script> -->
