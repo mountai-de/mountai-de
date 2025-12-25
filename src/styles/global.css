@@ -86,6 +86,37 @@
   --color-footer-muted: #b1aea5;
 }
 
+/* System-Preference basiertes Theme */
+/* Standard ist hell (Light), wechselt automatisch zu Dark wenn System Dark-Mode hat */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-text: #faf9f5;
+    --color-text-muted: #b1aea5;
+    --color-bg-alt: #2f2f2e;
+    --color-bg-section-0: #141413;
+    --color-bg-section-1: #1a1918;
+    --color-bg-section-2: #1f1e1d;
+    --color-bg-section-3: #262624;
+    --color-bg-header: var(--color-bg-section-0);
+    --color-bg-hero: var(--color-bg-section-3);
+    --color-bg-section-a: var(--color-bg-section-1);
+    --color-bg-section-b: var(--color-bg-section-2);
+    --color-bg: var(--color-bg-section-b);
+    --color-bg-footer: #141413;
+    --color-text-selection: #7c4b3b;
+    --color-accent: #db7759;
+    --color-border: var(--color-bg-section-1);
+    --color-button: #faf9f5;
+    --color-button-hover: #e8e6dc;
+    --color-link: #cb785c;
+    --color-link-secondary: #878683;
+    --color-link-hover: var(--color-accent-3);
+    --color-footer-bg: #faf9f5;
+    --color-footer-text: #faf9f5;
+    --color-footer-muted: #b1aea5;
+  }
+}
+
 /* Nord Theme - Light */
 /* [data-theme="light"] {
   --color-text: #2e3440;
